@@ -12,3 +12,5 @@ WEB/.idea/php.xml
 WEB/.idea/sqldialects.xml
 WEB/.idea/templatemo_565_onix_digital.iml
 WEB/.idea/inspectionProfiles/Project_Default.xml
+API/.idea/.gitignore
+WEB/.idea/.gitignore
