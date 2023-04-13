@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def get_manga_chapter(manga_name, chapter):
+    page_number = 1
     try:
         mangalink = f'https://raw.senmanga.com/{manga_name}/{chapter}'
         response = requests.get(mangalink)
@@ -25,7 +26,7 @@ def get_manga_chapter(manga_name, chapter):
             folder_name = f"{manga_name}_chapter_{chapter}"
             if not os.path.exists(folder_name):
                 os.makedirs(folder_name)
-            img_filename = os.path.join(folder_name, os.path.basename(image_url))
+            img_filename = os.path.join(folder_name, f"{page_number}.jpg")
             with open(img_filename, "wb") as img_file:
                 img_file.write(img_response.content)
 
